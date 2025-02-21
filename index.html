@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز الطلاب</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>نظام حجز الطلاب</h2>
+        <form id="bookingForm">
+            <label for="studentName">اسم الطالب</label>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <label for="studentEmail">البريد الإلكتروني</label>
+            <input type="email" id="studentEmail" name="studentEmail" required>
+
+            <label for="bookingDate">تاريخ الحجز</label>
+            <input type="date" id="bookingDate" name="bookingDate" required>
+
+            <button type="submit">حجز</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById('studentName').value;
+            let email = document.getElementById('studentEmail').value;
+            let date = document.getElementById('bookingDate').value;
+
+            alert('تم الحجز بنجاح! \nالاسم: ' + name + '\nالبريد الإلكتروني: ' + email + '\nالتاريخ: ' + date);
+        });
+    </script>
+
+</body>
+</html>
